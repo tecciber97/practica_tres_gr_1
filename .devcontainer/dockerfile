@@ -1,0 +1,10 @@
+FROM mcr.microsoft.com/devcontainers/python:3.11
+
+RUN apt-get update && \
+    apt-get install -y postgresql postgresql-contrib && \
+    apt-get clean
+
+# Configuración simplificada
+RUN service postgresql start && \
+    su postgres -c "psql -c \"ALTER USER postgres WITH PASSWORD 'example';\"" && \
+    su postgres -c "createdb mydb"
