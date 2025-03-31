@@ -5,7 +5,7 @@ Practica 3 de la Materia de Tratamiento de Datos
 ## Integrantes del grupo:
 
 - **Alexis Veloz**
-- **Santiago Sanchez**
+- **Santiago Sánchez**
 - **Marcos Criollo**
 - **Xavy Zurita**
 
