@@ -7,7 +7,7 @@ Practica 3 de la Materia de Tratamiento de Datos
 - **Alexis Veloz**
 - **Santiago Sánchez**
 - **Marcos Criollo**
-- **Xavy Zurita**
+- **Xavier Zurita**
 
 ## Objetivo
 
