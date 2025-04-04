@@ -1,16 +1,16 @@
 {
-	"name": "Python & PostgreSQL",
-	"build": {
-	  "dockerfile": "Dockerfile"
-	},
-	"postCreateCommand": "service postgresql start && psql -U postgres -c 'CREATE DATABASE mydb;'",
-	"forwardPorts": [5432],
-	"customizations": {
-	  "vscode": {
-		"extensions": [
-		  "ms-python.python",
-		  "ms-toolsai.jupyter"
-		]
-	  }
-	}
+  "name": "Python & PostgreSQL",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postStartCommand": "bash .devcontainer/start-postgres.sh",
+  "forwardPorts": [5432],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
   }
+}
