@@ -1,10 +1,12 @@
 FROM mcr.microsoft.com/devcontainers/python:3.11
 
+# Instalamos PostgreSQL
 RUN apt-get update && \
     apt-get install -y postgresql postgresql-contrib && \
     apt-get clean
 
-# Configuración simplificada
-RUN service postgresql start && \
-    su postgres -c "psql -c \"ALTER USER postgres WITH PASSWORD 'example';\"" && \
-    su postgres -c "createdb mydb"
+# Copiamos el script de arranque de PostgreSQL al contenedor
+COPY .devcontainer/start-postgres.sh /usr/local/bin/start-postgres.sh
+
+# Le damos permisos de ejecución
+RUN chmod +x /usr/local/bin/start-postgres.sh
