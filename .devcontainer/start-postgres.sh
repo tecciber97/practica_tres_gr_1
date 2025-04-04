@@ -13,3 +13,5 @@ sudo -u postgres psql -tc "SELECT 1 FROM pg_database WHERE datname = 'mydb'" | g
 
 # Asegurar que el usuario tenga contraseña
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'example';"
+
+echo "PostgreSQL está listo."
