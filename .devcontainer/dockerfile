@@ -1,12 +1,12 @@
 FROM mcr.microsoft.com/devcontainers/python:3.11
 
-# Instalamos PostgreSQL
+RUN echo "vscode ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vscode && chmod 0440 /etc/sudoers.d/vscode
 RUN apt-get update && \
     apt-get install -y postgresql postgresql-contrib && \
     apt-get clean
 
-# Copiamos el script de arranque de PostgreSQL al contenedor
-COPY .devcontainer/start-postgres.sh /usr/local/bin/start-postgres.sh
+# Copiamos el script de arranque (como están en la misma carpeta)
+COPY start-postgres.sh /usr/local/bin/start-postgres.sh
 
-# Le damos permisos de ejecución
+# Damos permisos de ejecución
 RUN chmod +x /usr/local/bin/start-postgres.sh

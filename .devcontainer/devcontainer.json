@@ -1,9 +1,10 @@
 {
   "name": "Python & PostgreSQL",
   "build": {
-    "dockerfile": "Dockerfile"
+    // Apuntamos explícitamente al archivo en .devcontainer
+    "dockerfile": "dockerfile"
   },
-  "postStartCommand": "bash .devcontainer/start-postgres.sh",
+  "postStartCommand": "bash /usr/local/bin/start-postgres.sh",
   "forwardPorts": [5432],
   "customizations": {
     "vscode": {
